@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class WeaponBase : MonoBehaviour
 {
+    [Header("Assign")]
     public GameObject projectile;
     
     public Transform firePoint;
 
-    public float fireSpeed = 100;
+    protected float fireSpeed = 100;
     protected bool canFire = false;
 
     public float fireInterval = 0.5f;

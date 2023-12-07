@@ -15,6 +15,7 @@ public class HeroController : MonoBehaviour
     void Update()
     {
         playerInput = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical")).normalized;
+        if (Input.GetKeyDown(KeyCode.Space)) Jump();
     }
 
     private void FixedUpdate()
@@ -24,5 +25,9 @@ public class HeroController : MonoBehaviour
 
         Debug.Log("Moving");
         rb.AddForce(playerInput * moveSpeed,ForceMode.Force);
+    }
+    private void Jump()
+    {
+        rb.AddForce(transform.up * moveSpeed, ForceMode.Impulse);
     }
 }
