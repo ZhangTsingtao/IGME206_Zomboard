@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
 public class WeaponBase : MonoBehaviour
 {
     [Header("Assign")]
@@ -15,31 +16,19 @@ public class WeaponBase : MonoBehaviour
     public float fireInterval = 0.5f;
     protected float timer = 0.0f;
 
-    protected LookAtMouse lookAtMouse;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        GetRaycastReference();
-    }
-
     // Update is called once per frame
     void Update()
     {
         FireBase();
     }
     
-    protected void GetRaycastReference()
-    {
-        lookAtMouse = GetComponent<LookAtMouse>();
-    }
 
     protected void FireBase()
     {
         CountTimer();
 
         //fire
-        if (Input.GetMouseButton(0) && canFire == true) FireProjectile(lookAtMouse.raycastPosition);
+        if (Input.GetMouseButton(0) && canFire == true) FireProjectile();
     }
     protected void CountTimer()
     {
@@ -54,11 +43,11 @@ public class WeaponBase : MonoBehaviour
             }
         }
     }
-    protected void FireProjectile(Vector3 fireDirection)
+    protected void FireProjectile()
     {
         canFire = false;
 
-        GameObject proj = Instantiate(projectile, firePoint.position, Quaternion.identity, transform.parent);
-        proj.GetComponent<Rigidbody>().velocity = (fireDirection - firePoint.position).normalized * fireSpeed;
+        GameObject proj = Instantiate(projectile, firePoint.position, Quaternion.identity, transform.parent.parent);
+        proj.GetComponent<Rigidbody>().velocity = transform.forward * fireSpeed;
     }
 }
