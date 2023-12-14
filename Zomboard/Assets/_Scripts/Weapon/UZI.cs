@@ -8,7 +8,6 @@ public class UZI : WeaponBase
     void Start()
     {
         fireInterval = fireInterval / 10;
-        GetRaycastReference();
     }
 
     // Update is called once per frame

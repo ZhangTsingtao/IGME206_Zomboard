@@ -5,12 +5,10 @@ using UnityEngine;
 
 public class LookAtMouse : MonoBehaviour
 {
-    public Vector3 raycastPosition;
+    private Vector3 raycastPosition;
     // Update is called once per frame
     void Update()
-    {
-        
-
+    {       
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
         if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity))
@@ -21,6 +19,4 @@ public class LookAtMouse : MonoBehaviour
             raycastPosition = hit.point;
         }
     }
-
-    
 }
