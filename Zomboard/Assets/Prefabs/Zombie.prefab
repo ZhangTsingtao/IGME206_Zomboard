@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 4307346336919568306}
   - component: {fileID: 1715537088244701051}
   - component: {fileID: 8807667070937360467}
-  - component: {fileID: 6264560668020824982}
   m_Layer: 0
   m_Name: Visual
   m_TagString: Untagged
@@ -84,29 +83,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &6264560668020824982
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 225329875168778631}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 1.1649157
-  m_Height: 5.6570845
-  m_Direction: 1
-  m_Center: {x: 0.03320667, y: -0.08954609, z: -0.06387842}
 --- !u!1 &5339056033586267910
 GameObject:
   m_ObjectHideFlags: 0
@@ -118,13 +94,15 @@ GameObject:
   - component: {fileID: 8712416505062362948}
   - component: {fileID: 3239312732068463531}
   - component: {fileID: 6541454748616546908}
+  - component: {fileID: 6314289127172316610}
+  - component: {fileID: 2257468943035692632}
   m_Layer: 0
   m_Name: Zombie
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8712416505062362948
 Transform:
   m_ObjectHideFlags: 0
@@ -173,5 +151,40 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 846a6102d197c3a4cb6509e90508da2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!136 &6314289127172316610
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5339056033586267910}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &2257468943035692632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5339056033586267910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d42411575659f449b95b1399be1885b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

@@ -8,8 +8,11 @@ public class ZombieBase : MonoBehaviour
     private NavMeshAgent agent;
     private Transform hero;
 
-    private int health = 10;
+    [SerializeField] private int health = 10;
     private int attack = 1;
+
+    [SerializeField] protected bool ableToHit = true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,9 +32,9 @@ public class ZombieBase : MonoBehaviour
         if (health <= 0) ZombieDie();
     }
 
-    public virtual int HurtPlayer()
+    public virtual void HurtPlayer()
     {
-        return attack;
+        HeroStatus.HeroGetHurt(attack);
     }
 
     public virtual void ZombieDie()
