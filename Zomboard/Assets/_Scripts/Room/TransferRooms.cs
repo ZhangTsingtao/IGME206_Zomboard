@@ -16,9 +16,4 @@ public class TransferRooms : MonoBehaviour
             SceneManager.LoadScene(TargetScene);
         }
     }
-
-    void LoadScene()
-    {
-
-    }
 }
