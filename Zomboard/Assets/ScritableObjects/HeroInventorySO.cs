@@ -38,13 +38,5 @@ public class HeroInventorySO : ScriptableObject
     {
         return weapons[0];
     }
-    public void checkInventory()
-    {
-        if (Weapons.Contains(Weapons[0]))
-        {
-
-        }
-        if (Weapons.Contains(Weapons[1]));
-    }
 }
 

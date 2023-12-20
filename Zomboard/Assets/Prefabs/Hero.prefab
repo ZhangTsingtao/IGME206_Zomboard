@@ -361,6 +361,8 @@ MonoBehaviour:
   heroInventorySO: {fileID: 11400000, guid: b42394e3b553bf0498a2575089289321, type: 2}
   weaponGO: {fileID: 561613120591144274}
   handPosition: {fileID: 5028036670182558823}
+  pistolUI: {fileID: 0}
+  assultUI: {fileID: 0}
 --- !u!114 &4372517822901098874
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -400,7 +402,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreNum: {fileID: 0}
-  playerScore: 0
   score: 0
 --- !u!1 &6039919843944740667
 GameObject:
@@ -427,7 +428,7 @@ Transform:
   m_GameObject: {fileID: 6039919843944740667}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.542, y: 0, z: 0.907}
+  m_LocalPosition: {x: 0.016, y: 0, z: 0.907}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -635,7 +636,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2546570398289342087, guid: 4981c8a0d173d1348b053fe4a6426b6f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.541
+      value: -0.074
       objectReference: {fileID: 0}
     - target: {fileID: 2546570398289342087, guid: 4981c8a0d173d1348b053fe4a6426b6f, type: 3}
       propertyPath: m_LocalPosition.y

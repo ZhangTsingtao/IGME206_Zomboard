@@ -7,7 +7,6 @@ using UnityEngine;
 public class PlayerScore : MonoBehaviour
 {
     public TMP_Text scoreNum;
-    public int playerScore = 0;
 
     public static PlayerScore Instance;
 
@@ -23,12 +22,13 @@ public class PlayerScore : MonoBehaviour
     }
     private void Start()
     {
-        playerScore = ScoreContainer.Score;
+        UpdateScore();
     }
+
 
     public void AddScore(int score)
     {
-        playerScore += score;
+        ScoreContainer.Score += score;
         UpdateScore();
     }
 
@@ -39,6 +39,6 @@ public class PlayerScore : MonoBehaviour
             Debug.LogWarning("No scoreNum found on this script, attach one on it!");
             return;
         }
-        scoreNum.text = playerScore.ToString();
+        scoreNum.text = ScoreContainer.Score.ToString();
     }
 }
