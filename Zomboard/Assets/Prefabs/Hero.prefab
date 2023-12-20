@@ -242,6 +242,7 @@ GameObject:
   - component: {fileID: 321012895315849014}
   - component: {fileID: 4372517822901098874}
   - component: {fileID: 8572345362388641635}
+  - component: {fileID: 1641535550474143569}
   m_Layer: 0
   m_Name: Hero
   m_TagString: Player
@@ -386,6 +387,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBarUI: {fileID: 1497461088872995970}
+--- !u!114 &1641535550474143569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3655710334799739378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba583756df309f74f96ad95dc60b6a39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreNum: {fileID: 0}
+  playerScore: 0
+  score: 0
 --- !u!1 &6039919843944740667
 GameObject:
   m_ObjectHideFlags: 0

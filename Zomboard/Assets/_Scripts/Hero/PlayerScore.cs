@@ -19,7 +19,11 @@ public class PlayerScore : MonoBehaviour
         if (Instance == null)
             Instance = this;
         else
-            Destroy(gameObject);
+            Destroy(this);
+    }
+    private void Start()
+    {
+        playerScore = ScoreContainer.Score;
     }
 
     public void AddScore(int score)
