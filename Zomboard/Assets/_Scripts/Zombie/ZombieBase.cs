@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,16 +9,21 @@ public class ZombieBase : MonoBehaviour
     private NavMeshAgent agent;
     private Transform hero;
 
-    [SerializeField] private int health = 10;
-    private int attack = 1;
+    [SerializeField] protected int health = 5;
+    protected int initialHealth;
+    protected int attack = 1;
 
-    [SerializeField] protected bool ableToHit = true;
+    protected bool ableToHit = true;
+
+    protected HealthBarDisplay healthBarDisplay;
 
     // Start is called before the first frame update
     void Start()
     {
+        initialHealth = health;
         agent = GetComponent<NavMeshAgent>();
         hero = GameObject.FindGameObjectWithTag("Player").transform;
+        healthBarDisplay = GetComponent<HealthBarDisplay>();
     }
 
     // Update is called once per frame
@@ -30,15 +36,24 @@ public class ZombieBase : MonoBehaviour
     {
         health -= damage;
         if (health <= 0) ZombieDie();
+
+        if (healthBarDisplay == null) 
+        {
+            Debug.LogWarning("No HealthBarDisplay found on this gameObject, attach one on it!");
+            return;
+        }
+
+        healthBarDisplay.UpdateHealthBar((float)health/(float)initialHealth);
     }
 
-    public virtual void HurtPlayer()
+    public virtual void HurtPlayer(HeroStatus hero)
     {
-        HeroStatus.HeroGetHurt(attack);
+        hero.HeroGetHurt(attack);
     }
 
     public virtual void ZombieDie()
     {
+        PlayerScore.Instance.AddScore(1);
         Destroy(gameObject);
     }
 }

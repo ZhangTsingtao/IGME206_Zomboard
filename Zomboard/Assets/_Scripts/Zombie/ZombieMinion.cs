@@ -13,8 +13,8 @@ public class ZombieMinion : ZombieBase
         {
             if (!ableToHit) return;
 
-            HurtPlayer();
-
+            HurtPlayer(collision.transform.GetComponent<HeroStatus>());
+            collision.transform.GetComponent<HeroController>().GetHurtImpulse(transform.position);
             ableToHit = false;
         }
     }

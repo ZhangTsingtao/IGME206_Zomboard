@@ -8,7 +8,7 @@ public class HeroController : MonoBehaviour
     public float moveSpeed = 50;
     public float speedLimit = 5;
     private Vector3 playerInput;
-    private bool isGrounded = true;
+    [SerializeField]private bool isGrounded = true;
 
     void Start()
     {
@@ -32,7 +32,7 @@ public class HeroController : MonoBehaviour
     }
     private void GroundCheck()
     {
-        isGrounded = Physics.Raycast(transform.position + Vector3.up * 0.1f, Vector3.down, 0.2f);
+        isGrounded = Physics.Raycast(transform.position + Vector3.down * 0.9f, Vector3.down, 0.2f);
         
         if (isGrounded) return;
         rb.AddForce(Vector3.down * 10, ForceMode.Force);
@@ -43,5 +43,9 @@ public class HeroController : MonoBehaviour
         {
             rb.AddForce(transform.up * moveSpeed / 2, ForceMode.Impulse);
         }
+    }
+    public void GetHurtImpulse(Vector3 zombiePosition)
+    {
+        rb.AddForce((transform.position - zombiePosition).normalized * 25f, ForceMode.Impulse);
     }
 }
